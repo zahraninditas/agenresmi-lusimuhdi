@@ -1,0 +1,803 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+/* General Navbar Styles */
+nav {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    padding: 0 20px;
+}
+/* Logo */
+.logo img {
+    height: 60px;
+}
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Higher z-index to stay above the menu */
+}
+.hamburger span {
+    background-color: black;
+    border-radius: 2px;
+    display: block;
+    height: 2px;
+    margin: 6px 0;
+    width: 25px;
+}
+/* Hide the Menu by Default */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.menu li {
+    list-style: none;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    /* Display hamburger menu on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide menu initially */
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px 0;
+    }
+
+    /* Show menu when active */
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+.logo {
+    display: flex;
+    padding-left: 20px;
+}
+.menu {
+    display:flex;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+}
+.menu li {
+    margin-right: 20px; 
+}
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: larger;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(30, 103, 105);
+    transition: all 0.3s ease-in-out;
+}
+.menu a:hover {
+    background-color:white;
+    color: rgb(90, 189, 189);
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.banner-img {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+.banner-img.active {
+    display: block; /* Hanya menampilkan gambar aktif */
+}
+.active {
+    display: block;
+    animation: fade 3s ease-in-out infinite;
+}
+.aboutsection {
+    background-color: #f8f9fa; /* Ganti dengan warna latar belakang yang sesuai */
+    padding: 50px 0;
+}
+
+.header-title {
+    max-width: 500px; /* Sesuaikan lebar maksimum teks */
+}
+.header-title h4 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 250%;
+    font-weight: bold;
+}
+.header-title p{
+    text-align: justify;
+} 
+
+.aboutsection img {
+    display: block;
+    max-width: 100%; /* Gambar akan menyesuaikan lebar parent */
+    height: auto;
+}
+.why-section {
+    background-color: aliceblue;
+}
+.lab-item {
+    border: 1px solid #ccc; /* Warna dan ketebalan garis frame */
+    border-radius: 10px; /* Mengatur sudut border menjadi melengkung */
+    padding: 20px; /* Jarak antara konten dan border */
+    transition: box-shadow 0.3s ease; /* Efek transisi bayangan saat hover */
+    font-size: 1em ;
+}
+.lab-item:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan saat hover */
+}
+.lab-content h4{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.col-12 h3.fw-bold{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.site-footer{
+    padding:30px;
+    background-color: rgb(24, 99, 99);
+    color: aliceblue;
+}
+.site-footer a{
+    color:inherit;
+}
+.site-footer h6{
+    font-size:1.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contact-official {
+    list-style: none;
+    display: flex;
+}
+.contact-official li {
+    margin-right: 10px; /* Memberikan jarak antara ikon */
+}
+.office-official{
+    list-style: none;
+}
+.container-end{
+    padding-top: 20px;
+}
+
+/*css paket*/
+
+.brochure-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto; /* Center the container horizontally */
+}
+.brochure-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.brochure-card img {
+    width: 100%;
+    height: 400px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+.brochure-card:hover {
+    transform: translateY(-10px);
+}
+.brochure-img {
+    width: 100%;
+    height: auto;
+}
+.brochure-content {
+    padding: 20px;
+    text-align: center;
+}
+.brochure-content h3 {
+    margin: 0 0 10px;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.brochure-content p {
+    color: #666;
+    margin: 0 0 20px;
+}
+.brochure-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+.brochure-button:hover {
+    background-color: #0f541e;
+    text-decoration: none;
+    color: #fff;
+}
+/* Additional styles for responsiveness */
+@media (max-width: 1200px) {
+    .brochure-container {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: center;
+    }
+    .brochure-card {
+        width: 45%; /* Take 45% of the container width on medium screens */
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .brochure-card {
+        width: 90%; /* Take 90% of the container width on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .brochure-container {
+        width: 100%; /* Ensure the container takes full width on mobile devices */
+        padding: 0 10px;
+    }
+    .brochure-card {
+        width: 100%; /* Full width for each brochure card on very small screens */
+        margin-bottom: 20px;
+    }
+    .brochure-content h3 {
+        font-size: 18px; /* Slightly reduce font size for titles on small screens */
+    }
+    .brochure-content p {
+        font-size: 14px; /* Slightly reduce font size for text on small screens */
+    }
+}
+
+/*umroh*/
+.umroh-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.umroh-section h2 {
+    background-color: #31976e;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.package-wrapper h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #0f541e;
+}
+.package-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.package-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+}
+.package-image {
+    width: 100%;
+    height: auto;
+}
+.package-info {
+    padding: 20px;
+}
+.package-info a{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.package-info:hover a{
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .package-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .package-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/*artikel */
+
+.artikel {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.artikel h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.news-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    text-align: center;
+}
+.news-card img {
+    width: 100%;
+    height: 50%;
+}
+.news-link {
+    text-decoration: none;
+}
+.news-card h3 {
+    font-size: 16px;
+    color: rgb(66, 109, 251);
+    margin: 10px 0;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.news-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/*Profile*/
+
+.profile-container {
+    background-color: #fff;
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.profile-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #407ec1;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-header .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    margin: 10px 0 5px;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.profile-header h2 {
+    margin: 5px 0;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.profile-header p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.profile-content {
+    padding: 20px;
+}
+
+.profile-content h3 {
+    margin-top: 0;
+    font-size: 26px;
+    color: #407ec1;
+    border-bottom: 2px solid #407ec1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-content p {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-content ul li {
+    margin: 10px 0;
+    padding-left: 15px;
+    position: relative;
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-content ul li::before {
+    content: '•';
+    color: #407ec1;
+    font-weight: bold;
+    display: inline-block;
+    width: 10px;
+    margin-left: -15px;
+}
+
+.profile-content a {
+    color: #407ec1;
+    text-decoration: none;
+}
+
+.profile-content a:hover {
+    text-decoration: underline;
+}
+
+/*Kontak*/
+
+.kontak {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.kontak h1 {
+    background-color: #2b806f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.contact-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+.contact-section h2 {
+    font-size: 24px;
+    color: #2b806f;
+    margin-bottom: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.contact-card {
+    align-items: center;
+    background-color: #e9f5e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    width: 80%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+.contact-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.contact-info h3 {
+    font-size: 18px;
+    color: #2b806f;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+.contact-info p {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 10px 0;
+}
+.contact-info a {
+    display: inline-block;
+    background-color: #126155;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+.contact-info a:hover {
+    background-color: #7dcfb5;
+}
+
+/*gallery*/
+
+.album {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+/* Album Header */
+.album h1 {
+    background-color: #b2b441;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Photo Album Section */
+.photo-album {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+/* Section Title */
+.photo-album h2 {
+    font-size: 24px;
+    color: #8b8d22;
+    margin-bottom: 40px;
+}
+/* Carousel Container */
+.carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Individual Carousel Items */
+.carousel-item {
+    display: none;
+    position: relative;
+}
+/* Display the Active Item */
+.carousel-item.active {
+    display: block;
+}
+/* Carousel Image */
+.carousel-item img {
+    width: 100%;
+    height: 500px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the entire area without distortion */
+    display: block;
+}
+/* Carousel Controls */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+}
+.carousel-control-prev {
+    left: -50px;
+}
+.carousel-control-next {
+    right: -50px;
+}
+/* Album Grid */
+.album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+/* Individual Album Card */
+.album-card {
+    background-color: #e9f5e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+/* Album Card Image */
+.album-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* Album Card Description */
+.album-card p {
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+}
+/* Hover Effect on Album Cards */
+.album-card:hover {
+    transform: translateY(-5px);
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 40vh; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 30vh; /* Further adjust height for very small screens */
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .album-card {
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 480px) {
+    .album-card {
+        width: 100%;
+    }
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+    }
+
+    .menu li {
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 768px) {
+    /* Paket Section */
+    .package-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .package-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Galeri Album Grid */
+    .album-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navbar */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    /* Paket Section */
+    .package-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Artikel News Card */
+    .news-card {
+        width: 100%;
+    }
+
+    /* Galeri Album Grid */
+    .album-card {
+        width: 100%;
+    }
+
+    /* Kontak Section */
+    .contact-card {
+        width: 100%;
+    }
+}
+
+/* Responsif untuk Layar Sangat Kecil (Mobile) */
+@media (max-width: 320px) {
+    body {
+        font-size: 14px;
+    }
+
+    .package-card {
+        padding: 10px;
+    }
+
+    .menu li a {
+        font-size: 16px;
+    }
+}
